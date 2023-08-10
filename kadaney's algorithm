@@ -1,0 +1,22 @@
+Approach:
+----------
+The steps are as follows:
+--------------------------
+
+step1---->We will run a loop(say i) to iterate the given array.
+step2---->Now, while iterating we will add the elements to the sum variable and consider the maximum one.
+step3---->If at any point the sum becomes negative we will set the sum to 0 as we are not going to consider it as a part of our answer.
+
+---------------------------------------------->CODE TO FIND LARGEST SUBARRAY USING KADANE'S ALGORITHM<------------------------------------------------------------------
+
+class Solution:
+    def maxSubArray(self, nums: List[int]) -> int:
+        m=-1
+        s=0
+        for i in range(len(nums)):
+            s+=nums[i]
+            if s>m:
+                m=s
+            if s<0:
+                s=0
+        return m
